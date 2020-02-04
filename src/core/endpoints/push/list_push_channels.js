@@ -7,7 +7,7 @@ export function getOperation(): string {
   return operationConstants.PNPushNotificationEnabledChannelsOperation;
 }
 
-export function validateParams(modules: ModulesInject, incomingParams: ListChannelsArgs) {
+export function validateParams(modules: ModulesInject, incomingParams: ListChannelsArgs): string {
   let { device, pushGateway, topic } = incomingParams;
   let { config } = modules;
 
@@ -32,7 +32,7 @@ export function getRequestTimeout({ config }: ModulesInject) {
   return config.getTransactionTimeout();
 }
 
-export function isAuthSupported() {
+export function isAuthSupported(): Boolean {
   return true;
 }
 

@@ -7,7 +7,7 @@ export function getOperation(): string {
   return operationConstants.PNRemoveAllPushNotificationsOperation;
 }
 
-export function validateParams(modules: ModulesInject, incomingParams: RemoveDeviceArgs) {
+export function validateParams(modules: ModulesInject, incomingParams: RemoveDeviceArgs): string {
   let { device, pushGateway, topic } = incomingParams;
   let { config } = modules;
 
@@ -32,7 +32,7 @@ export function getRequestTimeout({ config }: ModulesInject): number {
   return config.getTransactionTimeout();
 }
 
-export function isAuthSupported(): boolean {
+export function isAuthSupported(): Boolean {
   return true;
 }
 
